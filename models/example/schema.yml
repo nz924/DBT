@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: passenger
+    description: "A starter dbt model"
+    columns:
+      - name: PASSENGERID
+        description: "The primary key for this table"
+        tests:
+          - not_null
+          - unique
+          - dbt_utils.relationships:
+              to: ref('my_first_dbt_model')   # Vérifie que chaque PASSENGERID existe dans une autre table
+              field: PASSENGERID
+      - name: NAME
+        description: "First name of the passenger"
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "length(FIRST_NAME) > 0"   # Nom non vide
+      - name: SEX
+        description: "SEX"
+        tests:
+          - not_null
+      - name: AGE
+        description: "Age of the passenger"
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "AGE >= 0 AND AGE <= 120" # Age réaliste
