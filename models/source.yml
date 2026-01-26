@@ -1,5 +1,6 @@
 version: 2
 
+
 sources:
   - name: raw
     database: DWH_KEYRUS
@@ -11,7 +12,7 @@ sources:
     schema: PUBLIC
     tables:
       - name: PASSENGER
-
+  
 
 
 
