@@ -1,0 +1,18 @@
+version: 2
+
+
+sources:
+  - name: raw
+    database: DWH_KEYRUS
+    schema: PUBLIC
+    tables:
+      - name: PDC
+  - name: raw1
+    database: DWH_KEYRUS
+    schema: PUBLIC
+    tables:
+      - name: PASSENGER
+  
+
+
+

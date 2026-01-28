@@ -1,0 +1,13 @@
+my_project:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: QPHDMOG-UZ70449
+      user: NZ
+      password: NZkeyrus2025!!
+      role: 
+      warehouse: DEV_DWH_TEST
+      database: DEV_DWH_TEST
+      schema: DBO
+
