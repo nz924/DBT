@@ -1,10 +1,13 @@
 -- Configuration du modèle : materialized peut être 'table', 'view' ou 'incremental'
 {{ config(
-    materialized='table'
+    materialized='table',
+    database='DEV_DWH_TEST',
+    schema='DBO'
 ) }}
 
 
 select *,
+ {{ generate_surrogate_key(['PASSENGERID','NAME']) }} AS sk_passenger,
     CASE 
         WHEN PCLASS > 3 THEN TRUE
         ELSE FALSE
